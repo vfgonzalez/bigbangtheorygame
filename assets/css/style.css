@@ -1,0 +1,28 @@
+body{
+    background-image:url("../../assets/images/background.jpg");
+    opacity: 40%;
+    margin:auto;
+    font-family: 'Bangers', cursive;
+    text-align: center;
+}
+
+
+header{
+    padding:0px;
+    float:none;
+
+}
+.main{
+    color:whitesmoke;
+    font-size: 25px;
+}
+.nav{
+    padding: 20px;
+    margin-left: 30px;
+}
+.fader{
+    opacity:.7;
+}
+.card{
+    color: black;
+}

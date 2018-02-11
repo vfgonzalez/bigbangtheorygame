@@ -13,6 +13,9 @@ $(document).ready(function (){
 
     var attackbutton = document.createElement("audio");
     attackbutton.setAttribute("src", "./assets/images/bazinga.mp3");
+
+    var winsound = document.createElement("audio");
+    winsound.setAttribute("src", "./assets/images/swordmaster.mp3");
     // Theme Button
     $(".theme-button").on("click", function() {
       audioElement.play();
@@ -58,27 +61,33 @@ $(document).ready(function (){
     })
 
     $(".button").on("click",function(){
-        attackbutton.play();
         $(".hero-HP").html("HP: "+(ChosenHero.HP -= ChosenEnemy.counterattack()))
         $(".enemy-HP").html("HP: "+(ChosenEnemy.HP -= ChosenHero.attackpower()))
         if(ChosenHero.HP <= 0){
+            attackbutton.play();
             alert("Game Over, You Lose!")
+            ChosenHero.HP = 100
+            ChosenEnemy.HP = 100
             isEnemyChosen = false
             $(".enemy-choice").empty()
+            $(".enemy-HP").html("HP: "+100)
             isHeroChosen = false
             $(".hero-choice").empty()
-            $(".hero-HP").reset()
-            $(".enemy-HP").html("HP: "+100)
+            $(".hero-HP").html("HP: "+100)
             
-
+            
         }
         else if(ChosenEnemy.HP <= 0){
+            winsound.play();
             alert("You Beat " + ChosenEnemy.name+"!")
-            // $(document).reset()
+            ChosenHero.HP = 100
+            $(".hero-HP").html("HP: "+100)
+            ChosenEnemy.HP = 100
             isEnemyChosen = false
             $(".enemy-choice").empty()
-            $("hero-HP").html("HP: "+100)
+            $(".enemy-HP").html("HP: "+100)
 
+            
         }
         else{
         }

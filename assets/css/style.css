@@ -4,6 +4,7 @@ body{
     margin:auto;
     font-family: 'Bangers', cursive;
     text-align: center;
+    overflow: auto;
 }
 
 
@@ -21,8 +22,19 @@ header{
     margin-left: 30px;
 }
 .fader{
-    opacity:.7;
+    opacity:.5;
 }
 .card{
     color: black;
+}
+
+.attackarea{
+    margin-top:50px;
+    text-align: center;
+    
+}
+#battle-area{
+    margin:auto;
+    text-align: center;
+    
 }

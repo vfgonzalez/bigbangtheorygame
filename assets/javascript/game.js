@@ -86,12 +86,9 @@ $(document).ready(function (){
             isEnemyChosen = false
             $(".enemy-choice").empty()
             $(".enemy-HP").html("HP: "+100)
-
+        }
             
-        }
-        else{
-        }
-       
+        
     })
 
    
@@ -101,36 +98,36 @@ $(document).ready(function (){
                 name:"Sheldon",
                 HP: 100,
                 attackpower: function(){
-                    return Math.floor(Math.random()*10)+1},
+                    return Math.floor(Math.random()*10)+10},
                 counterattack: function(){
-                    return Math.floor(Math.random()*10)+1},
+                    return Math.floor(Math.random()*10)+10},
                 image: "./assets/images/Sheldon.png"
             },
             {
                 name:"Leonard",
                 HP: 100,
                 attackpower:function(){
-                    return Math.floor(Math.random()*10)+1},
+                    return Math.floor(Math.random()*10)+10},
                 counterattack:function(){
-                    return Math.floor(Math.random()*10)+1},
+                    return Math.floor(Math.random()*10)+10},
                 image: "./assets/images/Leonard.png"
             },
             {
                 name:"Howard",
                 HP: 100,
                 attackpower: function(){
-                    return Math.floor(Math.random()*10)+1},
+                    return Math.floor(Math.random()*10)+10},
                 counterattack: function(){
-                    return Math.floor(Math.random()*10)+1},
+                    return Math.floor(Math.random()*10)+10},
                 image: "./assets/images/Howard.png"
             },
             {
                 name:"Raj",
                 HP: 100,
                 attackpower: function(){
-                    return Math.floor(Math.random()*10)+1},
+                    return Math.floor(Math.random()*10)+10},
                 counterattack: function(){
-                    return Math.floor(Math.random()*10)+1},
+                    return Math.floor(Math.random()*10)+10},
                 image: "./assets/images/Raj.png"
             }
                 

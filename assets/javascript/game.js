@@ -46,7 +46,8 @@ $(document).ready(function (){
     $(document).on("click",".myChar",function(){
         if(isHeroChosen===false){
             ChosenHero = charArr[$(this).attr("value")]
-            $(this).addClass("fader")
+            $(this).empty()
+            $(this).click(false)
             console.log("What is being changed hero "+ $(this))
             console.log(ChosenHero.name)
             $(".hero-choice").append("<img src='"+ChosenHero.image+"' 'style='width:180px;height:200px;'/>"+"<br>"+"<div class='hero-HP'>"+'HP: '+ ChosenHero.HP+"</div>")
@@ -55,7 +56,8 @@ $(document).ready(function (){
         }
         else if(isEnemyChosen === false && ChosenHero.name !== charArr[$(this).attr("value")].name){
             ChosenEnemy = charArr[$(this).attr("value")]
-            $(this).addClass("fader")
+            $(this).empty()
+            $(this).click(false)
             console.log("what is being called "+$(this))
             console.log(ChosenEnemy.name)
             $(".enemy-choice").append("<img src='"+ChosenEnemy.image+"''style='width:180px;height:200px;'/>"+"<br>"+"<div class='enemy-HP'>"+" HP: "+ ChosenEnemy.HP+"</div>" )

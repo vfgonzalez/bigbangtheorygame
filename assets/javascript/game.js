@@ -66,6 +66,7 @@ $(document).ready(function (){
     $(".button").on("click",function(){
         $(".hero-HP").html("HP: "+(ChosenHero.HP -= ChosenEnemy.counterattack()))
         $(".enemy-HP").html("HP: "+(ChosenEnemy.HP -= (ChosenHero.attackpower()+ChosenEnemy.counterattack())))
+        // if statement sets conditions when hero character loses, and resets game
         if(ChosenHero.HP <= 0){
             attackbutton.play();
             alert("Game Over, You Lose!")
@@ -83,6 +84,7 @@ $(document).ready(function (){
             
             
         }
+        // else if statement sets condition when beating a character, and setting a new one
         else if(ChosenEnemy.HP <= 0){
             alert("You Beat " + ChosenEnemy.name+"!")
             ChosenHero.HP = 100
@@ -93,6 +95,7 @@ $(document).ready(function (){
             $(".enemy-HP").html("HP: "+100)
             enemybeatcount++
             console.log("enemies defeated count: "+ enemybeatcount)
+            // if statement below keeps the reset of enemy until all 3 have been defeated
             if(enemybeatcount === 3){
                 winsound.play();
                 alert("You have Defeated all Nerds!")

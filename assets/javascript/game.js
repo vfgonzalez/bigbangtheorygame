@@ -6,14 +6,15 @@ $(document).ready(function (){
     var isEnemyAlive
     var isHeroChosen
     var isEnemyChosen
+    var enemybeatcount = 0
 
     // Gets Link for Theme Song
     var audioElement = document.createElement("audio");
     audioElement.setAttribute("src", "./assets/images/theme.mp3");
-
+    // Bazinga sound for hero loses
     var attackbutton = document.createElement("audio");
     attackbutton.setAttribute("src", "./assets/images/bazinga.mp3");
-
+    // Win sound once enemy defeated
     var winsound = document.createElement("audio");
     winsound.setAttribute("src", "./assets/images/swordmaster.mp3");
     // Theme Button
@@ -40,12 +41,13 @@ $(document).ready(function (){
         }
     }
 
-    
+    // Pressing buttons below assigns Hero and Enemy
     
     $(document).on("click",".myChar",function(){
         if(isHeroChosen===false){
             ChosenHero = charArr[$(this).attr("value")]
             $(this).addClass("fader")
+            console.log("What is being changed hero "+ $(this))
             console.log(ChosenHero.name)
             $(".hero-choice").append("<img src='"+ChosenHero.image+"' 'style='width:180px;height:200px;'/>"+"<br>"+"<div class='hero-HP'>"+'HP: '+ ChosenHero.HP+"</div>")
 
@@ -54,15 +56,16 @@ $(document).ready(function (){
         else if(isEnemyChosen === false && ChosenHero.name !== charArr[$(this).attr("value")].name){
             ChosenEnemy = charArr[$(this).attr("value")]
             $(this).addClass("fader")
+            console.log("what is being called "+$(this))
             console.log(ChosenEnemy.name)
             $(".enemy-choice").append("<img src='"+ChosenEnemy.image+"''style='width:180px;height:200px;'/>"+"<br>"+"<div class='enemy-HP'>"+" HP: "+ ChosenEnemy.HP+"</div>" )
             isEnemyChosen = true
         }
     })
-
+    // Attack button 
     $(".button").on("click",function(){
         $(".hero-HP").html("HP: "+(ChosenHero.HP -= ChosenEnemy.counterattack()))
-        $(".enemy-HP").html("HP: "+(ChosenEnemy.HP -= ChosenHero.attackpower()))
+        $(".enemy-HP").html("HP: "+(ChosenEnemy.HP -= (ChosenHero.attackpower()+ChosenEnemy.attackpower())))
         if(ChosenHero.HP <= 0){
             attackbutton.play();
             alert("Game Over, You Lose!")
@@ -74,11 +77,13 @@ $(document).ready(function (){
             isHeroChosen = false
             $(".hero-choice").empty()
             $(".hero-HP").html("HP: "+100)
+            location.reload()
+            $(document).scrollTop(0)
+            enemybeatcount = 0
             
             
         }
         else if(ChosenEnemy.HP <= 0){
-            winsound.play();
             alert("You Beat " + ChosenEnemy.name+"!")
             ChosenHero.HP = 100
             $(".hero-HP").html("HP: "+100)
@@ -86,12 +91,22 @@ $(document).ready(function (){
             isEnemyChosen = false
             $(".enemy-choice").empty()
             $(".enemy-HP").html("HP: "+100)
+            enemybeatcount++
+            console.log("enemies defeated count: "+ enemybeatcount)
+            if(enemybeatcount === 3){
+                winsound.play();
+                alert("You have Defeated all Nerds!")
+                location.reload()
+                $(document).scrollTop(0)
+            }
+
         }
             
         
     })
 
    
+    // Character Attributes Below:
 
         var charArr = [
             {

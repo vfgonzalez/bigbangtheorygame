@@ -65,7 +65,7 @@ $(document).ready(function (){
     // Attack button 
     $(".button").on("click",function(){
         $(".hero-HP").html("HP: "+(ChosenHero.HP -= ChosenEnemy.counterattack()))
-        $(".enemy-HP").html("HP: "+(ChosenEnemy.HP -= (ChosenHero.attackpower()+ChosenEnemy.attackpower())))
+        $(".enemy-HP").html("HP: "+(ChosenEnemy.HP -= (ChosenHero.attackpower()+ChosenEnemy.counterattack())))
         if(ChosenHero.HP <= 0){
             attackbutton.play();
             alert("Game Over, You Lose!")
@@ -113,7 +113,7 @@ $(document).ready(function (){
                 name:"Sheldon",
                 HP: 100,
                 attackpower: function(){
-                    return Math.floor(Math.random()*10)+10},
+                    return Math.floor(Math.random()*10)+13},
                 counterattack: function(){
                     return Math.floor(Math.random()*10)+10},
                 image: "./assets/images/Sheldon.png"
@@ -122,7 +122,7 @@ $(document).ready(function (){
                 name:"Leonard",
                 HP: 100,
                 attackpower:function(){
-                    return Math.floor(Math.random()*10)+10},
+                    return Math.floor(Math.random()*10)+12},
                 counterattack:function(){
                     return Math.floor(Math.random()*10)+10},
                 image: "./assets/images/Leonard.png"
@@ -131,7 +131,7 @@ $(document).ready(function (){
                 name:"Howard",
                 HP: 100,
                 attackpower: function(){
-                    return Math.floor(Math.random()*10)+10},
+                    return Math.floor(Math.random()*10)+14},
                 counterattack: function(){
                     return Math.floor(Math.random()*10)+10},
                 image: "./assets/images/Howard.png"
@@ -140,7 +140,7 @@ $(document).ready(function (){
                 name:"Raj",
                 HP: 100,
                 attackpower: function(){
-                    return Math.floor(Math.random()*10)+10},
+                    return Math.floor(Math.random()*10)+11},
                 counterattack: function(){
                     return Math.floor(Math.random()*10)+10},
                 image: "./assets/images/Raj.png"

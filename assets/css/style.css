@@ -6,6 +6,9 @@ body{
     text-align: center;
     overflow: auto;
 }
+.jumbotron{
+    overflow: auto;
+}
 
 
 header{
@@ -31,10 +34,36 @@ header{
 .attackarea{
     margin-top:50px;
     text-align: center;
+    float: right;
     
 }
-#battle-area{
+.battle-area{
     margin:auto;
     text-align: center;
+    text-decoration:underline;
+    text-decoration-color: red
     
+}
+
+
+/* Resetting the banner image */
+
+@media (max-width: 768px){
+    #banner-img{
+        height: 200px;
+        width:auto;
+    }
+    .jumbotron{
+        overflow: auto;
+    }
+    .main{
+        text-align: center;
+        margin: auto;
+    }
+}
+@media (max-width: 640px){
+    #banner-img{
+        height: 150px;
+        width: auto;
+    }
 }

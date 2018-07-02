@@ -6,7 +6,7 @@ Role Playing Game that Forces Super Nerds to battle each other until only one st
 - Google Fonts
 - Bootstrap styling
 - Javascript
-- embedded sound (Pause Play Button on top right plays theme song!)
+- embedded sound (Pause/Play Button on top left plays theme song!)
 
 
 **Screenshots**

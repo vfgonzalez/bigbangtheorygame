@@ -2,6 +2,12 @@
 
 Role Playing Game that Forces Super Nerds to battle each other until only one stands!
 
+**Tech Used**
+- Google Fonts
+- Bootstrap styling
+- Javascript
+- embedded sound (Pause Play Button on top right plays theme song!)
+
 
 **Screenshots**
 

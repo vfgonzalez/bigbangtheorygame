@@ -2,6 +2,8 @@
 
 Role Playing Game that Forces Super Nerds to battle each other until only one stands!
 
+#### Sole Developer
+
 **Tech Used**
 - Google Fonts
 - Bootstrap styling
